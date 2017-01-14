@@ -35,4 +35,4 @@ function publish(msg) {
         });
 }
 
-publish({'temp': temp, 'channel': argv.c});
+publish({'temp': temp, 'channel': argv.c, 'time': new Date().getTime()});
