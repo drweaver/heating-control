@@ -35,4 +35,4 @@ function publish(msg) {
         });
 }
 
-publish({'temp': temp});
+publish({'temp': temp, 'channel': argv.c});
