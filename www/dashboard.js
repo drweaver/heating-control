@@ -2,7 +2,7 @@
 
 var app = angular.module('HeatingControlApp');
 
-app.controller('MainController', function($scope, $http, 'subscribeKey') {
+app.controller('MainController', [ 'subscribeKey', function($scope, $http, subscribeKey) {
   
 var __eon_pubnub = new PubNub({
   subscribeKey: subscribeKey
@@ -77,12 +77,6 @@ eon.chart({
     transform: transform_temperature
 });
   
-});
-
-
-
-
-
 var transform_temperature = function(message) {
     console.log(message);
     var o = {};
@@ -98,3 +92,8 @@ var transform_temperature = function(message) {
       eon: o
     };
 };
+}]);
+
+
+
+
