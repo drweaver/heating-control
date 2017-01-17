@@ -3,7 +3,7 @@ var eventbus = require('./eventbus.js');
 var config = require('../etc/pubnub.json');
 
 const channel = 'heatingcontrol.temperature.event';
-const pub_topic = 'pubnub.temperature.event';
+const pub_topic = 'temperature.post';
 
 var pubnub = new PubNub({
     subscribeKey: config.subscribeKey,

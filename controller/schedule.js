@@ -3,7 +3,7 @@ var cron = require('node-cron');
 var eventbus = require('./eventbus.js');
 var later = require('later');
 
-var schedulefilename = "../etc/schedule.json";
+var schedulefilename = __dirname + "/../etc/schedule.json";
 var activeSchedule = "winter";
 
 const CRON_MIN = 0;
@@ -22,10 +22,12 @@ function loadSchedule(schedulefilename, scheduleName) {
     jsonfile.readFile(schedulefilename, function(err, allSchedules) {
         if( err ) {
             //TODO    
+            throw err;
         }
 
        if( !allSchedules[scheduleName] ) {
            // TODO
+           throw err;
        }
        var schedule = allSchedules[scheduleName];
        
