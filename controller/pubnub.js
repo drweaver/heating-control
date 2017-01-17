@@ -26,6 +26,16 @@ pubnub.addListener({
     }
 });
 
+/**
+ * status categories:
+ * 
+ * PNNetworkUpCategory     SDK detected that network is online.
+ * PNNetworkDownCategory   SDK detected that network is down.
+ * PNNetworkIssuesCategory A subscribe event experienced an exception when running.
+ * PNReconnectedCategory   SDK was able to reconnect to pubnub.
+ * PNConnectedCategory     SDK subscribed with a new mix of channels (fired every time the channel / channel group mix changed).SDK
+**/
+
 
 /* Emit last temperature for each temperature sensor */
 pubnub.history({
