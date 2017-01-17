@@ -1,0 +1,21 @@
+{ 
+    "winter": [
+        { "zone": "centralheating", "state": "on", "time": "05:00", "temp": 19, "days": "everyday", "thermostat": "bedroom" },
+        { "zone": "centralheating", "state": "on", "time": "07:30", "temp": 19, "days": "everyday", "thermostat": "lounge" },
+        { "zone": "centralheating", "state": "on", "time": "08:00", "temp": 12, "days": ["Monday","Tuesday","Thursday"], "thermostat": "lounge"  },
+        { "zone": "centralheating", "state": "on", "time": "14:30", "temp": 19, "days": ["Monday","Tuesday","Thursday"], "thermostat": "lounge"  },
+        { "zone": "centralheating", "state": "on", "time": "21:00", "temp": 18, "days": "everyday", "thermostat": "bedroom"  },
+        { "zone": "centralheating", "state": "on", "time": "23:00", "temp": 16, "days": "everyday", "thermostat": "bedroom"  },
+        { "zone": "hotwater", "state": "on" , "time": "04:00", "days": "everyday" },
+        { "zone": "hotwater", "state": "off", "time": "05:00", "days": "everyday" }
+    ],
+    "summer": [
+        { "zone": "centralheating", "state": "off", "time": "22:00", "days": "everyday" },
+        { "zone": "hotwater", "state": "on" , "time": "04:00", "days": "everyday" },
+        { "zone": "hotwater", "state": "off", "time": "05:00", "days": "everyday" }
+    ],
+    "away": [
+        { "zone": "centralheating", "state": "on" , "time": "22:00", "temp": 10, "days": "everyday", "thermostat": "lounge" },
+        { "zone": "hotwater", "state": "off", "time": "06:00", "days": "everyday" }
+    ]
+}
