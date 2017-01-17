@@ -3,12 +3,13 @@
 // temp2pubnub --subkey abc-123 --pubkey xyz-789 --channel my.channel.name <temperature>
 
 var argv = require('yargs')
-    .usage('Usage: $0 --subkey [key] --pubkey [key] --channel [channel] <temperature>')
+    .usage('Usage: $0 --subkey [key] --pubkey [key] --channel [channel] --name [sensorname] <temperature>')
     .alias('s','subkey')
     .alias('p','pubkey')
     .alias('c','channel')
+    .alias('n','name')
     .demandCommand(1)
-    .demandOption(['s','p','c'])
+    .demandOption(['s','p','c','n'])
     .check(function(argv) {
       if( isNaN(parseFloat(argv._[0])) ) throw "Not a valid number: " + argv._[0];
       return true;
@@ -35,4 +36,4 @@ function publish(msg) {
         });
 }
 
-publish({'temp': temp, 'channel': argv.c, 'time': new Date().getTime()});
+publish({'temperature': temp, 'temperature_sensor': argv.n, 'time': new Date().getTime()});
