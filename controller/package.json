@@ -2,7 +2,6 @@
   "name": "heating-control",
   "version": "1.0.0",
   "description": "Heating Control using making heavy use of PubNub for messaging.",
-  "main": "heating-control.js",
   "repository": "https://github.com/drweaver/heating-control",
   "author": "Shane Weaver",
   "keywords": [
@@ -24,5 +23,9 @@
   , "node-cron": "^1.1.2"
   , "later" : "^1.2.0"
   , "wpi-gpio": "drweaver/wpi-gpio"
+  },
+  "scripts": {
+    "start": "node server.js"
+    , "stop": "pkill --signal SIGINT heatingcontrol"
   }
 }

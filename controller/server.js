@@ -1,3 +1,5 @@
+process.title = 'heatingcontrol';
+
 require('./gpio.js');
 
 require('./heating.js');
