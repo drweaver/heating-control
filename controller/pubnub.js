@@ -15,13 +15,13 @@ var pubnub = new PubNub({
 pubnub.addListener({
     message: function(m) {
         var msg = m.message; // The Payload
-        console.log("New PubNub Message: ");
-        console.dir(msg);
+        console.log("PUBNUB: New Message on channel "+m.channel);
+        //console.dir(msg);
         eventbus.emit(pub_topic, msg );
     },
     status: function(s) {
         if (s.category === "PNConnectedCategory") {
-                console.log("Successfully connected to PubNub");
+                console.log("PUBNUB: Successfully connected");
         }
     }
 });
@@ -45,7 +45,7 @@ pubnub.history({
     },
     function (status, response) {
         if( status.error ) {
-            console.error( 'Failed to retrieve history from PubNub' );
+            console.error( 'PUBNUB: Failed to retrieve history' );
             return;
         }
         var sensor_msg = {};

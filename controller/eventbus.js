@@ -2,7 +2,7 @@
 
 var EventEmitter = require('events').EventEmitter;
 var emitter = new EventEmitter();
-var debug = true;
+var debug = false;
 
 if (debug) {
 	var emit = emitter.emit;

@@ -19,8 +19,8 @@ eventbus.on(temperature_event, function(msg) {
 });
 
 eventbus.on(schedule_event, function(msg) {
-    if( !msgAssert(msg, ['temperature_sensor', 'zone', 'temperature'] ) ) {
-        console.error('Schedule event does not have enough keys');
+    if( !msgAssert(msg, ['temperature_sensor', 'zone', 'temperature_target'] ) ) {
+        console.log('THERMOSTAT: Ignoring schedule event that has no thermostat requirement: '+msg.zone);
         return;
     }
     currentSchedule[msg.zone] = msg;
@@ -28,8 +28,9 @@ eventbus.on(schedule_event, function(msg) {
 });
 
 function thermostatAction(zone, temperature_sensor) {
-    var temperatureMet = !(temperature_sensor in currentTemperature) || currentTemperature[temperature_sensor].temperature >= currentSchedule[zone].temperature;
+    var temperatureMet = !(temperature_sensor in currentTemperature) || currentTemperature[temperature_sensor].temperature >= currentSchedule[zone].temperature_target;
     var publish = Object.assign({temperature_met: temperatureMet}, currentSchedule[zone]);
+    console.log('THERMOSTAT: Temperature for '+zone+' is'+(temperatureMet?' ':' not ')+'met (target is '+currentSchedule[zone].temperature_target+')');
     eventbus.emit('thermostat.event', publish);
 }
 
