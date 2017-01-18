@@ -1,11 +1,11 @@
 { 
     "winter": [
-        { "zone": "centralheating", "state": "on", "time": "05:00", "temperature_target": 19, "days": "everyday", "temperature_sensor": "bedroom" },
+        { "zone": "centralheating", "state": "on", "time": "05:00", "temperature_target": 19, "days": "everyday", "temperature_sensor": "lounge" },
         { "zone": "centralheating", "state": "on", "time": "07:30", "temperature_target": 19, "days": "everyday", "temperature_sensor": "lounge" },
         { "zone": "centralheating", "state": "on", "time": "08:00", "temperature_target": 12, "days": ["Monday","Tuesday","Thursday"], "temperature_sensor": "lounge"  },
         { "zone": "centralheating", "state": "on", "time": "14:30", "temperature_target": 19, "days": ["Monday","Tuesday","Thursday"], "temperature_sensor": "lounge"  },
-        { "zone": "centralheating", "state": "on", "time": "21:00", "temperature_target": 18, "days": "everyday", "temperature_sensor": "bedroom"  },
-        { "zone": "centralheating", "state": "on", "time": "23:00", "temperature_target": 16, "days": "everyday", "temperature_sensor": "bedroom"  },
+        { "zone": "centralheating", "state": "on", "time": "21:00", "temperature_target": 18, "days": "everyday", "temperature_sensor": "lounge"  },
+        { "zone": "centralheating", "state": "on", "time": "23:00", "temperature_target": 16, "days": "everyday", "temperature_sensor": "lounge"  },
         { "zone": "hotwater", "state": "on" , "time": "04:00", "days": "everyday" },
         { "zone": "hotwater", "state": "off", "time": "05:00", "days": "everyday" }
     ],
