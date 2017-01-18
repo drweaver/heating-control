@@ -8,16 +8,28 @@ cd heating-control
 npm install
 ```
 
+## Configuration
+
+Modify the following files with your specifics:
+
+* `etc/schedule.json`
+* `etc/pubnub.json`
+* `etc/gpio.json`
+
+## Electronics
+
+TODO
+
 ### Raspberry Pi Pre-requisites
 
 #### Node
 
 ```bash
-wget http://nodejs.org/dist/v0.10.28/node-v0.10.28-linux-arm-pi.tar.gz
-tar xvf node-v0.10.28-linux-arm-pi.tar.gz
+wget https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-armv6l.tar.xz
+tar xf node-v6.9.4-linux-armv6l.tar.xz
 sudo mkdir /opt/node
-sudo cp -r node-v0.10.28-linux-arm-pi/* /opt/node
-rm -rf node-v0.10.28-linux-arm-pi*
+sudo cp -r node-v6.9.4-linux-armv6l/* /opt/node
+rm -rf node-v6.9.4-linux-armv6l.tar.xz*
 sudo nano /etc/profile
 ```
 paste in:
@@ -27,7 +39,7 @@ PATH="$PATH:$NODE_JS_HOME/bin"
 export PATH
 ```
 
-Log out and back in and try node -v, it should give v0.10.28.
+Log out and back in and try node -v, it should give v6.9.4.
 
 ## Wiring-Pi & gpio command
 

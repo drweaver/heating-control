@@ -4,6 +4,7 @@
   "description": "Heating Control using making heavy use of PubNub for messaging.",
   "repository": "https://github.com/drweaver/heating-control",
   "author": "Shane Weaver",
+  "license": "Apache-2.0",
   "keywords": [
     "boiler",
     "control",
