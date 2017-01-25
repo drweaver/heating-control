@@ -6,11 +6,11 @@
         { "zone": "centralheating", "state": "on" , "time": "14:30", "temperature_target": 20, "days": ["Monday","Tuesday","Thursday"], "temperature_sensor": "lounge"  },
         { "zone": "centralheating", "state": "on" , "time": "21:00", "temperature_target": 19, "days": "everyday", "temperature_sensor": "lounge"  },
         { "zone": "centralheating", "state": "off", "time": "01:00", "temperature_target": 19, "days": "everyday" },
-        { "zone": "hotwater"      , "state": "on" , "time": "03:00", "days": "everyday" },
-        { "zone": "hotwater"      , "state": "off", "time": "04:00", "days": "everyday" }
+        { "zone": "hotwater"      , "state": "on" , "time": "04:00", "days": "everyday" },
+        { "zone": "hotwater"      , "state": "off", "time": "04:55", "days": "everyday" }
     ],
     "summer": [
-        { "zone": "centralheating", "state": "off", "time": "01:00", "temperature_target": 19, "days": "everyday" },
+        { "zone": "centralheating", "state": "off", "time": "01:00", "days": "everyday" },
         { "zone": "hotwater"      , "state": "on" , "time": "04:00", "days": "everyday" },
         { "zone": "hotwater"      , "state": "off", "time": "05:00", "days": "everyday" }
     ],
