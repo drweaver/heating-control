@@ -1,3 +1,8 @@
+iot.*.pem
+iot.*.key
+iot.*.crt
+
+
 # Logs
 logs
 *.log
