@@ -1,0 +1,6 @@
+{ 
+    "clientID": "<client uuid>",
+    "region": "<aws region>",
+    "temperatureTopic": "heatingcontrol.temperature",
+    "thingName": "heatingcontrol_c9"
+}
