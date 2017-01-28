@@ -3,11 +3,12 @@
 // temp2pubnub --subkey abc-123 --pubkey xyz-789 --channel my.channel.name <temperature>
 
 var argv = require('yargs')
-    .usage('Usage: $0 --subkey [key] --pubkey [key] --channel [channel] --name [sensorname] <temperature>')
+    .usage('Usage: $0 --subkey [key] --pubkey [key] --channel [channel] --uuid [uuid] --name [sensorname] <temperature>')
     .alias('s','subkey')
     .alias('p','pubkey')
     .alias('c','channel')
     .alias('n','name')
+    .alias('u','uuid')
     .demandCommand(1)
     .demandOption(['s','p','c','n'])
     .check(function(argv) {
@@ -22,7 +23,8 @@ var PubNub = require('pubnub');
 
 var pubnub = new PubNub({
         publishKey : argv.p,
-        subscribeKey: argv.s
+        subscribeKey: argv.s,
+        uuid: argv.u || PubNub.generateUUID()
 });
 
 function publish(msg) {
