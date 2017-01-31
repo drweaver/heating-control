@@ -1,0 +1,15 @@
+{
+  "name": "temp2mqtt",
+  "version": "1.0.0",
+  "description": "Simple script publish temperature to MQTT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shane Weaver",
+  "license": "MIT",
+  "dependencies": {
+    "w1temp": "^4.0.2",
+    "mqtt": "^2.3.1"
+  }
+}
