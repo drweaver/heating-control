@@ -4,7 +4,11 @@ var mqtt = require('mqtt');
 
 w1temp.getSensor(config.deviceId).then( sensor => {
   var client = mqtt.connect(config.mqtt.url);
+  client.on('connect', connack=>{
+    console.log("Successfully connected to MQTT");
+  });
   var lastTemp = false;
+  console.log("Listening for temperature changes");
   sensor.on('change', temp => {
     temp = Math.round(temp*10)/10;
     if( lastTemp !== temp ) {
@@ -15,4 +19,6 @@ w1temp.getSensor(config.deviceId).then( sensor => {
       });
     }
   });
+}, err => {
+  console.error('Failed to get sensor: '+err);
 });
