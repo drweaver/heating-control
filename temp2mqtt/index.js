@@ -9,8 +9,10 @@ w1temp.getSensor(config.deviceId).then( sensor => {
     temp = Math.round(temp*10)/10;
     if( lastTemp !== temp ) {
       lastTemp = temp;
-      console.log('Temp changed: '+temp);
-      client.publish(config.mqtt.topic,temp.toString());
+      client.publish(config.mqtt.topic,temp.toString(), err => {
+        if( err )
+          console.error('Failed to publish temperature reading to MQTT: '+err);
+      });
     }
   });
 });
