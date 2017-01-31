@@ -29,9 +29,10 @@ w1temp.getSensor(config.deviceId).then( sensor => {
       lastTemp = av;
       publish(av);
     }
+    setTimeout( action, 1000 );
   };
   
-  setTimeout( action, 1000);
+  action();
 
 }, err => {
   console.error('Failed to get sensor: '+err);
