@@ -1,3 +1,4 @@
+process.title = 'temp2mqtt';
 var config = require('./etc/config.json');
 var w1temp = require('w1temp');
 var mqtt = require('mqtt');
