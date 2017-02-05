@@ -9,7 +9,7 @@ client.on('connect', connack=>{
 });
 
 function publish(temp) {
-  client.publish(config.mqtt.topic,temp.toString(), err => {
+  client.publish(config.mqtt.topic,temp.toString(), { retain: true }, err => {
   if( err )
     console.error('Failed to publish temperature reading to MQTT: '+err);
   });
