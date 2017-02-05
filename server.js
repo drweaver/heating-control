@@ -12,4 +12,4 @@ require('./lib/temperature.js');
 
 require('./lib/schedule.js');
 
-require('./lib/pubnub.js');
+require('./lib/mqtt.js');
