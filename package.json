@@ -24,6 +24,7 @@
   , "node-cron": "^1.1.2"
   , "later" : "^1.2.0"
   , "wpi-gpio": "drweaver/wpi-gpio"
+  , "underscore": "^1.8.3"
   },
   "scripts": {
     "start": "node server.js"
