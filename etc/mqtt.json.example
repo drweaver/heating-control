@@ -1,4 +1,3 @@
 {
-  "url": "mqtt://localhost",
-  "prefix": "home/heating/"
+  "url": "mqtt://localhost"
 }
