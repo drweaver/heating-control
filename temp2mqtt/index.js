@@ -3,7 +3,7 @@ var config = require('./etc/config.json');
 var w1temp = require('w1temp');
 var mqtt = require('mqtt');
 
-var client = mqtt.connect(config.mqtt.url);
+var client = mqtt.connect(config.mqtt.url, { will: { topic: config.mqtt.topic, payload: null, retain: true, qos: 0 } });
 client.on('connect', connack=>{
   console.log("Successfully connected to MQTT");
 });
