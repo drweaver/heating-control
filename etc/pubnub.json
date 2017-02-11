@@ -1,4 +1,0 @@
-{ 
-    "subscribeKey": "<pubnub-sub-key>",
-    "publishKey": "<pubnub-pub-key>"
-}

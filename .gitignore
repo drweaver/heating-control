@@ -1,4 +1,5 @@
-etc/mqtt.json
+etc/*.json
+!etc/*_default.json
 
 iot.*.pem
 iot.*.key
