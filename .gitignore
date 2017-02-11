@@ -1,5 +1,5 @@
-etc/*.json
-!etc/*_default.json
+**/etc/*.json
+!**/etc/*_default.json
 
 iot.*.pem
 iot.*.key
@@ -10,6 +10,7 @@ iot.*.crt
 logs
 *.log
 npm-debug.log*
+nohup.out
 
 # Runtime data
 pids
