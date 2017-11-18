@@ -1,7 +1,0 @@
-{
-  "deviceId": "<temperature sensor ID in /sys/bus/w1/devices/>",
-  "mqtt": {
-    "url": "mqtt://localhost",
-    "topic": "heatingcontrol/<sensor_name>/temperature"
-  }
-}
