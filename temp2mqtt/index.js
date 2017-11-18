@@ -18,6 +18,7 @@ var config = {
   }
 };		
 
+console.log("Connecting to MQTT at URL: " + config.mqtt.url);
 var client = mqtt.connect(config.mqtt.url, { will: { topic: config.mqtt.topic+'/status', payload: 'Disconnected', retain: true, qos: 0 } });
 client.on('connect', connack=>{
   console.log("Successfully connected to MQTT");
@@ -25,7 +26,7 @@ client.on('connect', connack=>{
 });
 
 function publish(temp) {
-  console.log('Publishing temperature '+temp+' degrees');
+  console.log('Publishing '+process.env.TEMP_LOCATION+' temperature '+temp+' degrees');
   client.publish(config.mqtt.topic,temp.toString(), { retain: false }, err => {
   if( err )
     console.error('Failed to publish temperature reading to MQTT: '+err);
@@ -52,6 +53,8 @@ w1temp.getSensor(config.deviceId).then( sensor => {
   action();
 
 }, err => {
-  console.error('Failed to get sensor: '+err);
+  console.error('Failed to find sensor with device id '+config.deviceId+': '+err);
+  console.error('exiting...');
+  process.exit(1);
 });
 
